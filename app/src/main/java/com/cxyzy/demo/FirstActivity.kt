@@ -11,6 +11,7 @@ class FirstActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         log(tag, "onCreate")
         super.onCreate(savedInstanceState)
+        log(tag, savedInstanceState?.getString("key").toString())
         setContentView(R.layout.activity_main)
         button.setOnClickListener { startActivity(Intent(this, SecondActivity::class.java)) }
     }
@@ -48,6 +49,7 @@ class FirstActivity : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle) {
         log(tag, "onSaveInstanceState")
         super.onSaveInstanceState(outState)
+        outState.putString("key", "test")
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
