@@ -5,8 +5,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
-    private val tag = MainActivity::class.java.simpleName
+class FirstActivity : AppCompatActivity() {
+    private val tag = FirstActivity::class.java.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         log(tag, "onCreate")
@@ -18,6 +18,11 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         log(tag, "onStart")
         super.onStart()
+    }
+
+    override fun onRestart() {
+        log(tag, "onRestart")
+        super.onRestart()
     }
 
     override fun onResume() {
